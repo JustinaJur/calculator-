@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root{
+display: grid;
+place-items: center;
+padding: 50px;
+
+}
+.container{
+  display: grid;
+  place-items: center;
+}
+
+.calculator {
+border: 4px solid#85144b;
+background-color: #39CCCC;
+}
+
+tbody {
+  display: grid; 
+  /* //place-items: center; */
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows:repeat(5, 70px);
+  border: 2px solid #85144b;
+}
+td{
+  display: grid;
+  place-items: center;
+  border: 1px solid #85144b;
+  background-color: #FFDC00;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+h1{
+  color: #85144b;
+  text-align: center;
+}
+
+.clear {
+  grid-column: 1/4;
+  background-color: #F012BE;
+}
+
+.result {
+grid-column: 4;
+grid-row: span 2;
+background-color: #0074D9;
+}
