@@ -21,7 +21,7 @@ const AllButtons = (props) => {
                 <td> 0</td>
                 <td>- </td>
                 <td > +</td>
-                <td className="result"> =</td>
+                <td className="result">=</td>
                 <td className="clear">clear</td>
             </tbody>
         </table >
