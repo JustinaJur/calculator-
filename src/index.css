@@ -45,6 +45,8 @@ td{
   font-weight: 800;
 }
 
+td:hover { transform: scale(1.05); }
+
 h1{
   color: #85144b;
   text-align: center;
