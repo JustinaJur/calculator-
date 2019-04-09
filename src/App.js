@@ -10,61 +10,32 @@ class App extends Component {
   }
 
   handleClick = (e) => {
-    var inputValue = e.target.innerText;
-    switch (inputValue) {
-
-      case "+":
+    let inputValue = e.target.innerText;
+    if (e.target.tagName === "TD") {
+      try {
+        if (inputValue === "=") {
+          this.setState({
+            screen: eval(this.state.screen)
+          })
+        }
+        else if (inputValue === "clear") {
+          this.setState({
+            screen: ""
+          })
+        }
+        else {
+          this.setState({
+            screen: this.state.screen + inputValue
+          });
+        }
+      }
+      catch (err) {
+        console.log(err)
         this.setState({
-          screen: this.state.screen + inputValue
-        });
-
-      case "-":
-        this.setState({
-          screen: this.state.screen + inputValue
-        });
-        console.log(this.state.screen)
-
-      case "*":
-        this.setState({
-          screen: this.state.screen + inputValue
-        });
-
-      case "/":
-        this.setState({
-          screen: this.state.screen + inputValue
-        });
-
-      case ".":
-        this.setState({
-          screen: this.state.screen + inputValue
-        });
-
-      case "0":
-      case "1":
-      case "2":
-      case "3":
-      case "4":
-      case "5":
-      case "6":
-      case "7":
-      case "8":
-      case "9":
-        this.setState({
-          screen: this.state.screen + inputValue
-        });
+          screen: "error"
+        })
+      }
     }
-  }
-
-  result = () => {
-    this.setState({
-      screen: eval(this.state.screen)
-    })
-  }
-
-  clear = () => {
-    this.setState({
-      screen: ""
-    })
   }
 
 
@@ -75,8 +46,6 @@ class App extends Component {
         <Screen screen={this.state.screen} />
         <Main
           handleClick={this.handleClick}
-          result={this.result}
-          clear={this.clear}
         />
       </div >
     );

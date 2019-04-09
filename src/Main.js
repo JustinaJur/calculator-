@@ -7,8 +7,6 @@ const Main = (props) => {
         <div className="container">
             <AllButtons
                 handleClick={props.handleClick}
-                result={props.result}
-                clear={props.clear}
             />
         </div>
     );
